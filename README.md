@@ -1,4 +1,4 @@
-**accounts-housemd** is a Meteorite package to populate your Meteor.users() collection with famous dead people.
+**accounts-housemd** is a Meteorite package to populate your Meteor.users() collection with personalities from the television series House, MD.
 
 
 ------------------------
