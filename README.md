@@ -7,7 +7,7 @@
 First, install the accounts-famous-dead-people package from the command line, like so:
 
 ````
-mrt add accounts-housemd
+meteor add clinical:accounts-housemd
 ````
 
 Alternatively, if you'd like to bypass Atmosphere, and install directly from GitHub, you could update your application's smart.json file, like so:
@@ -67,10 +67,3 @@ Thirteen
 
 Code is MIT License. Use as you wish, including for commercial purposes.  
 Images should all be in the public domain.
-
-------------------------
-### Support
-Found this package to be useful?  Consider tipping the package maintainer for their time!  
-
-[![Support via Gittip](https://raw.github.com/gittip/www.gittip.com/master/www/assets/gittip.png)](https://www.gittip.com/awatson1978/)  
-
