@@ -53,13 +53,13 @@ Usernames and passwords for all the users should be the same.  For the most part
 ------------------------
 ### Users List
 
-Allison Camron
-Eric Foreman
-Gregory House
-James Wilson
-Lawrence Kutner
-Lisa Cuddy
-Robert Chase
+Allison Camron  
+Eric Foreman  
+Gregory House  
+James Wilson  
+Lawrence Kutner  
+Lisa Cuddy  
+Robert Chase  
 Thirteen
 
 ------------------------
