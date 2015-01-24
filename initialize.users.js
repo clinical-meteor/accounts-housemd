@@ -108,7 +108,7 @@ Meteor.startup(function () {
 
     // crate our administrator
     userId = Accounts.createUser({
-      username: 'chase',
+      username: 'allison',
       password: 'allison',
       email: 'allison@test.org',
       profile: {
