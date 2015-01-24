@@ -106,19 +106,6 @@ Meteor.startup(function () {
     console.info('Account created: ' + userId);
 
 
-    // crate our administrator
-    userId = Accounts.createUser({
-      username: 'allison',
-      password: 'allison',
-      email: 'allison@test.org',
-      profile: {
-        name: 'Allison Camron',
-        role: 'Physician',
-        avatar: '/packages/clinical_accounts-housemd/housemd/allison.camron.jpg'
-      }
-    });
-    console.info('Account created: ' + userId);
-
 
     // crate our administrator
     userId = Accounts.createUser({
