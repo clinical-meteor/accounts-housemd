@@ -47,6 +47,31 @@ Robert Chase
 Thirteen
 
 ------------------------
+### Example Usage  
+
+````html
+{{#each userList}}
+  {{profile.name}}<br>
+{{/each}}
+````
+
+````js
+if (Meteor.isClient) {
+  Meteor.subscribe("users");
+
+  Template.registerHelper('userList', function(){
+    return Meteor.users.find();
+  });
+}
+
+if (Meteor.isServer) {
+  Meteor.publish("users", function(){
+    return Meteor.users.find();
+  });
+}
+````
+
+------------------------
 ### License
 
 Code is MIT License. Use as you wish, including for commercial purposes.  
