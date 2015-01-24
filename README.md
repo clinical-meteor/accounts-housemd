@@ -10,22 +10,6 @@ First, install the accounts-famous-dead-people package from the command line, li
 meteor add clinical:accounts-housemd
 ````
 
-Alternatively, if you'd like to bypass Atmosphere, and install directly from GitHub, you could update your application's smart.json file, like so:
-
-````js
-{
-  "meteor": {
-    "branch": "master"
-  },
-  "packages": {
-    "accounts-housemd": {
-      "git": "https://github.com/awatson1978/accounts-housemd.git"
-    }
-  }
-}
-
-````
-
 
 ------------------------
 ### Default User Record Schema  
