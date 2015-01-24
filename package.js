@@ -1,7 +1,7 @@
 Package.describe({
   summary: "Adds images from House MD to the Meteor.users collection.",
   // update this value before you run 'meteor publish'
-  version: "1.0.3",
+  version: "1.0.4",
 
   // if this value isn't set, meteor will default to the directory name
   name: "clinical:accounts-housemd",
@@ -11,6 +11,9 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
+  api.use('accounts-base@1.1.3');
+  api.use('accounts-password@1.0.5');
+
   api.add_files('initialize.users.js', 'server');
 
   api.addFiles('housemd/allison.camron.jpg', "client");
