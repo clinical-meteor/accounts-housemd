@@ -23,7 +23,7 @@ The user objects are have a fairly simple document schema that looks like the fo
   profile: {
     name: 'Allison Camron',
     role: 'Physician',
-    avatar: '/avatars/allison.camron.jpg'
+    avatar: '/packages/clinical_accounts-housemd/housemd/allison.camron.jpg'
   }
 }
 ````
