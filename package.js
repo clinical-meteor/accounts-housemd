@@ -7,10 +7,14 @@ Package.describe({
   name: "clinical:accounts-housemd",
 
   // and add this value if you want people to access your code from Atmosphere
-  git: "http://github.com/awatson1978/accounts-housemd.git"
+  git: "http://github.com/awatson1978/accounts-housemd.git",
+
+  // only load during local development
+  isDebug: true
 });
 
 Package.on_use(function (api) {
+  api.use('standard-app-packages@1.0.2');
   api.use('accounts-base@1.1.3');
   api.use('accounts-password@1.0.5');
 

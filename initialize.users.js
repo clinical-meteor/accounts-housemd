@@ -5,6 +5,15 @@
 Meteor.startup(function () {
   if (Meteor.users.find().count() === 0) {
     console.info('no users in database!  adding some default users');
+    Meteor.call("initializeUsers");
+  }
+});
+
+
+
+Meteor.methods({
+  initializeUsers: function(){
+    console.log("initializeUsers()");
 
     var userId = null;
 
@@ -14,7 +23,7 @@ Meteor.startup(function () {
       password: 'allison',
       email: 'allison@test.org',
       profile: {
-        name: 'Allison Camron',
+        fullName: 'Allison Camron',
         role: 'Physician',
         avatar: '/packages/clinical_accounts-housemd/housemd/allison.camron.jpg'
       }
@@ -28,7 +37,7 @@ Meteor.startup(function () {
       password: 'foreman',
       email: 'foreman@test.org',
       profile: {
-        name: 'Eric Foreman',
+        fullName: 'Eric Foreman',
         role: 'Physician',
         avatar: '/packages/clinical_accounts-housemd/housemd/eric.foreman.jpg'
       }
@@ -42,7 +51,7 @@ Meteor.startup(function () {
       password: 'house',
       email: 'house@test.org',
       profile: {
-        name: 'Gregory House',
+        fullName: 'Gregory House',
         role: 'Physician',
         avatar: '/packages/clinical_accounts-housemd/housemd/gregory.house.jpg'
       }
@@ -56,7 +65,7 @@ Meteor.startup(function () {
       password: 'wilson',
       email: 'wilson@test.org',
       profile: {
-        name: 'James Wilson',
+        fullName: 'James Wilson',
         role: 'Physician',
         avatar: '/packages/clinical_accounts-housemd/housemd/james.wilson.jpg'
       }
@@ -70,7 +79,7 @@ Meteor.startup(function () {
       password: 'kutner',
       email: 'kutner@test.org',
       profile: {
-        name: 'Lawrence Kutner',
+        fullName: 'Lawrence Kutner',
         role: 'Physician',
         avatar: '/packages/clinical_accounts-housemd/housemd/lawrence.kutner.jpg'
       }
@@ -84,7 +93,7 @@ Meteor.startup(function () {
       password: 'cuddy',
       email: 'cuddy@test.org',
       profile: {
-        name: 'Lisa Cuddy',
+        fullName: 'Lisa Cuddy',
         role: 'Physician',
         avatar: '/packages/clinical_accounts-housemd/housemd/lisa.cuddy.jpg'
       }
@@ -98,7 +107,7 @@ Meteor.startup(function () {
       password: 'chase',
       email: 'chase@test.org',
       profile: {
-        name: 'Robert Chase',
+        fullName: 'Robert Chase',
         role: 'Physician',
         avatar: '/packages/clinical_accounts-housemd/housemd/robert.chase.jpg'
       }
@@ -113,13 +122,16 @@ Meteor.startup(function () {
       password: 'thirteen',
       email: 'thirteen@test.org',
       profile: {
-        name: 'Thirteen',
+        fullName: 'Thirteen',
         role: 'Physician',
         avatar: '/packages/clinical_accounts-housemd/housemd/thirteen.jpg'
       }
     });
     console.info('Account created: ' + userId);
-
-
+  },
+  removeAllUsers: function(){
+    Meteor.users.find().forEach(function(user){
+      Meteor.users.remove({_id: user._id});
+    });
   }
 });

@@ -10,6 +10,13 @@ First, install the accounts-famous-dead-people package from the command line, li
 meteor add clinical:accounts-housemd
 ````
 
+------------------------
+### Meteor Methods
+
+````
+initializeUsers
+removeAllUsers
+````  
 
 ------------------------
 ### Default User Record Schema  
@@ -75,4 +82,4 @@ if (Meteor.isServer) {
 ### License
 
 Code is MIT License. Use as you wish, including for commercial purposes.  
-Images should all be in the public domain.
+Images may be restricted by Fox Media.  
