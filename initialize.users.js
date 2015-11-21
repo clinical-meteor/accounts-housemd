@@ -129,7 +129,12 @@ Meteor.methods({
     });
     console.info('Account created: ' + userId);
   },
-  removeAllUsers: function(){
+  removeAllUsers: function (){
+    Meteor.users.find().forEach(function(user){
+      Meteor.users.remove({_id: user._id});
+    });
+  },
+  dropUsers: function (){
     Meteor.users.find().forEach(function(user){
       Meteor.users.remove({_id: user._id});
     });
