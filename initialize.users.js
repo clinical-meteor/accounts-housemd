@@ -19,11 +19,11 @@ Meteor.methods({
 
     // crate our administrator
     userId = Accounts.createUser({
-      username: 'allison',
-      password: 'allison',
-      email: 'allison@test.org',
+      username: 'camron',
+      password: 'camron',
+      email: 'camron@test.org',
       profile: {
-        fullName: 'Allison Camron',
+        fullName: 'Test User',
         role: 'Physician',
         avatar: '/packages/clinical_accounts-housemd/housemd/allison.camron.jpg'
       }

@@ -24,9 +24,9 @@ removeAllUsers
 The user objects are have a fairly simple document schema that looks like the following:
 ````js
 {
-  username: 'allison',
-  password: 'allison',
-  email: 'allison@test.org',
+  username: 'camron',
+  password: 'camron',
+  email: 'camron@test.org',
   profile: {
     name: 'Allison Camron',
     role: 'Physician',
