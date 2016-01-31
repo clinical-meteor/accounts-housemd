@@ -1,8 +1,10 @@
-**accounts-housemd** is a Meteorite package to populate your Meteor.users() collection with personalities from the television series House, MD.
+##clincal:accounts-housemd
+
+Meteor package to populate your Meteor.users() collection with personalities from the television series House, MD.
 
 
-------------------------
-### Installation
+===============================
+#### Installation
 
 First, install the accounts-famous-dead-people package from the command line, like so:
 
@@ -10,16 +12,16 @@ First, install the accounts-famous-dead-people package from the command line, li
 meteor add clinical:accounts-housemd
 ````
 
-------------------------
-### Meteor Methods
+===============================
+#### Meteor Methods
 
 ````
 initializeUsers
 removeAllUsers
 ````  
 
-------------------------
-### Default User Record Schema  
+===============================
+#### Default User Record Schema  
 
 The user objects are have a fairly simple document schema that looks like the following:
 ````js
@@ -35,14 +37,14 @@ The user objects are have a fairly simple document schema that looks like the fo
 }
 ````
 
-------------------------
-### Default Usernames and Passwords  
+===============================
+#### Default Usernames and Passwords  
 
 Usernames and passwords for all the users should be the same.  For the most part, the username and password will both be the person's first name, but a number of users are set as the last name.  All emails will be at the ``test.org`` domain.
 
 
-------------------------
-### Users List
+===============================
+#### Users List
 
 Allison Camron  
 Eric Foreman  
@@ -53,8 +55,8 @@ Lisa Cuddy
 Robert Chase  
 Thirteen
 
-------------------------
-### Example Usage  
+===============================
+#### Example Usage  
 
 ````html
 {{#each userList}}
@@ -78,8 +80,9 @@ if (Meteor.isServer) {
 }
 ````
 
-------------------------
-### License
+===============================
+#### Licensing  
 
-Code is MIT License. Use as you wish, including for commercial purposes.  
-Images may be restricted by Fox Media.  
+![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
+
+Images may be restricted by Fox Media.  Best to only use this package for testing purposes.
