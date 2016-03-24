@@ -8,8 +8,15 @@ Meteor package to populate your Meteor.users() collection with personalities fro
 
 First, install the accounts-famous-dead-people package from the command line, like so:
 
-````
+````bash
+# to add House MD users to your application
 meteor add clinical:accounts-housemd
+
+# to initialize House MD users
+INITIALIZE=true meteor
+
+# to initialize fHouse MD doctors using the HL7 FHIR Practitioner resource
+INITIALIZE=true Practitioners=true meteor
 ````
 
 ===============================

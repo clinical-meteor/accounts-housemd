@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Adds images from House MD to the Meteor.users collection.",
-  version: "1.1.4",
+  version: "2.0.0",
   name: "clinical:accounts-housemd",
   git: "http://github.com/awatson1978/accounts-housemd.git",
   isDebug: true
@@ -13,7 +13,9 @@ Package.on_use(function (api) {
   api.use('accounts-base@1.1.3');
   api.use('accounts-password@1.0.5');
 
-  api.addFiles('initialize.users.js', 'server');
+  api.use('clinical:hl7-resource-practitioner@1.0.1');
+
+  api.addFiles('server/initialize.js', 'server');
 
   api.addFiles('housemd/allison.camron.jpg', "client", {isAsset: true});
   api.addFiles('housemd/eric.foreman.jpg', "client", {isAsset: true});
