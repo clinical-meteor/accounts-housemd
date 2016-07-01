@@ -117,7 +117,7 @@ Meteor.methods({
             },
             gender: user.profile.gender,
             photo: [{
-              url: user.profile.gender.avatar
+              url: user.profile.avatar
             }]
           };
           newPractitioner.identifier.push({
