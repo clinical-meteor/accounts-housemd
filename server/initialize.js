@@ -135,7 +135,20 @@ Meteor.methods({
               reference: Meteor.absoluteUrl()
             }
           });
-          newPractitioner.telecom.push({
+          newPractitioner.identifier.push({
+            use : "usual",
+            type : {
+              text : "Medical record number",
+              coding : [ 
+                {
+                  system : "http://hl7.org/fhir/v2/0203",
+                  code : "MR"
+                }
+            ]
+          },
+          value : (Math.random() * 10000000)
+        });
+        newPractitioner.telecom.push({
             system: 'phone',
             use: Random.choice(['home', 'work', 'temp']),
             value: Math.floor(Math.random() * 10000000).toString().substring(3,6) + "-" + Math.floor(Math.random() * 1000000).toString().substring(3,6) + "-" + Math.floor(Math.random() * 10000)
@@ -153,7 +166,7 @@ Meteor.methods({
               }
             }],
             code: {
-              text: Math.floor(Math.random() * 10000000)
+              text: Math.floor(Math.random() * 10000000).toFixed(0)
             },
             issuer: {
               display: "American College of Physicians"
