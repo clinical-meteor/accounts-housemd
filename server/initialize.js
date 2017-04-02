@@ -118,14 +118,19 @@ Meteor.methods({
             identifier: [],
             telecom: [],
             qualification: [],
-            name: {
-              text: user.profile.fullName
-            },
-            gender: user.profile.gender,
-            photo: [{
-              url: user.profile.avatar
-            }]
+            name: [],
+            gender: 'unknown',
+            photo: []
           };
+          if(user.profile){
+            newPractitioner.name.push({
+              text: user.profile.fullName
+            });
+            newPractitioner.gender = user.profile.gender;
+            newPractitioner.photo.push({
+              url: user.profile.avatar
+            });
+          }
           newPractitioner.identifier.push({
             use: 'username',
             value: user.username,
