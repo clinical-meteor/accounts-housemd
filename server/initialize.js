@@ -13,7 +13,10 @@ Meteor.startup(function () {
 
 
 Meteor.methods({
-  initializeUsers: function(){
+  initializeUsers: function(options){
+    check(options, Object);
+    console.log('initializeUsers', options);
+    
     var userId = null;
 
     var users = [
@@ -107,7 +110,7 @@ Meteor.methods({
       }
     ];
 
-    if (process.env.Practitioners) {
+    if (process.env.Practitioners || options.initializePracitioners) {
       if ((Practitioners.find().count() === 0) || (process.env.ADDITIONAL)) {
 
         var today = new Date();
@@ -199,13 +202,27 @@ Meteor.methods({
     }
   },
   removeAllUsers: function (){
-    Meteor.users.find().forEach(function(user){
-      Meteor.users.remove({_id: user._id});
-    });
+    if (process.env.NODE_ENV === 'test') {
+      console.log('-----------------------------------------');
+      console.log('Dropping users... ');
+      Meteor.users.find().forEach(function(user){
+        Meteor.users.remove({_id: user._id});
+      });
+    } else {
+      console.log('This command can only be run in a test environment.');
+      console.log('Try setting NODE_ENV=test');
+    }
   },
   dropUsers: function (){
-    Meteor.users.find().forEach(function(user){
-      Meteor.users.remove({_id: user._id});
-    });
+    if (process.env.NODE_ENV === 'test') {
+      console.log('-----------------------------------------');
+      console.log('Dropping users... ');
+      Meteor.users.find().forEach(function(user){
+        Meteor.users.remove({_id: user._id});
+      });
+    } else {
+      console.log('This command can only be run in a test environment.');
+      console.log('Try setting NODE_ENV=test');
+    }
   }
 });
