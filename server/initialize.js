@@ -6,7 +6,7 @@
 Meteor.startup(function () {
   if (process.env.INITIALIZE) {
     console.log('Initializing HouseMD users...');
-    Meteor.call("initializeUsers");
+    Meteor.call("initializeUsers", {});
   }
 });
 
