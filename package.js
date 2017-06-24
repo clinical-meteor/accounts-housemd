@@ -1,6 +1,6 @@
 Package.describe({
   summary: 'Adds images from House MD to the Meteor.users collection.',
-  version: '2.2.2',
+  version: '2.2.3',
   name: 'clinical:accounts-housemd',
   git: 'http://github.com/awatson1978/accounts-housemd.git',
   isDebug: true
