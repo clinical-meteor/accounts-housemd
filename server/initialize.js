@@ -14,7 +14,7 @@ Meteor.startup(function () {
 
 Meteor.methods({
   initializeUsers: function(options){
-    check(options, Object);
+    check(options, Match.Maybe(Object));
     console.log('initializeUsers', options);
     
     var userId = null;
