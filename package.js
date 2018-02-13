@@ -13,7 +13,7 @@ Package.on_use(function (api) {
   api.use('accounts-base@1.1.3');
   api.use('accounts-password@1.0.5');
 
-  api.use('clinical:hl7-resource-practitioner');
+  api.use('clinical:hl7-resource-practitioner@3.0.0');
   api.imply('clinical:hl7-resource-practitioner');
 
   api.addFiles('server/initialize.js', 'server');
