@@ -22,9 +22,19 @@ INITIALIZE=true Practitioners=true meteor
 ===============================
 #### Meteor Methods
 
-````
-initializeUsers
-removeAllUsers
+
+````js
+# initializeUsers()
+Meteor.call('initializeHouseUsers', {
+  asPractitioners: true,
+  asUsers: true
+});
+
+# removeHouseUsers()
+Meteor.call('removeHouseUsers', {
+  practitioners: true,
+  users: true
+});
 ````  
 
 ===============================
