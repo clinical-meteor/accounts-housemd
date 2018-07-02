@@ -10,6 +10,7 @@ Package.on_use(function (api) {
   api.versionsFrom('1.1.0.3');
   api.use('meteor-platform');
 
+  api.use('ecmascript@0.9.0');
   api.use('accounts-base@1.1.3');
   api.use('accounts-password@1.0.5');
 
