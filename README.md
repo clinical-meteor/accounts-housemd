@@ -24,13 +24,13 @@ INITIALIZE=true Practitioners=true meteor
 
 
 ````js
-# initializeUsers()
+// initializeUsers()
 Meteor.call('initializeHouseUsers', {
   asPractitioners: true,
   asUsers: true
 });
 
-# removeHouseUsers()
+// removeHouseUsers()
 Meteor.call('removeHouseUsers', {
   practitioners: true,
   users: true

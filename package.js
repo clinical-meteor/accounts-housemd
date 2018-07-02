@@ -1,6 +1,6 @@
 Package.describe({
   summary: 'Adds images from House MD to the Meteor.users collection.',
-  version: '2.3.0',
+  version: '2.3.1',
   name: 'clinical:accounts-housemd',
   git: 'http://github.com/awatson1978/accounts-housemd.git',
   isDebug: true
@@ -26,4 +26,8 @@ Package.on_use(function (api) {
   api.addFiles('housemd/robert.chase.jpg', 'client', {isAsset: true});
   api.addFiles('housemd/james.wilson.jpg', 'client', {isAsset: true});
   api.addFiles('housemd/thirteen.jpg', 'client', {isAsset: true});
+
+  api.addFiles('lib/Characters.js');
+
+  api.export('Characters');
 });
