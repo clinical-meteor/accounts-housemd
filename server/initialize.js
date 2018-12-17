@@ -185,9 +185,11 @@ Meteor.methods({
 
 
       if(options.asPractitioners){
-        if(!Practitioners.findOne({'name.text': user.profile.fullName})){
-          practitionerId = Practitioners.insert(newPractitioner);
-          console.info('Practitioner created: ' + practitionerId)  
+        if(typeof Practitioners === "object"){
+          if(!Practitioners.findOne({'name.text': user.profile.fullName})){
+            practitionerId = Practitioners.insert(newPractitioner);
+            console.info('Practitioner created: ' + practitionerId)  
+          }  
         }
       }
       if(options.asUser){
