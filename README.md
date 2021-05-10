@@ -26,7 +26,7 @@ INITIALIZE=true Practitioners=true meteor
 ````js
 // initializeUsers()
 Meteor.call('initializeHouseUsers', {
-  asPractitioners: true,
+  asPractitioner: true,
   asUsers: true
 });
 

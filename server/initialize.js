@@ -1,3 +1,10 @@
+import { get, has } from 'lodash';
+import {  
+  Patients,
+  Practitioners
+} from 'meteor/clinical:hl7-fhir-data-infrastructure';
+
+
 // if the database is empty on server start, create some sample data.
 // we create a separate bootstrap.users.js file
 // because we'll be wanting to set up a number of patient-scenario test users
@@ -15,6 +22,8 @@ Meteor.startup(function () {
 Meteor.methods({
   initializeHouseUsers(options){
     check(options, Match.Maybe(Object));
+
+    console.log('Initializing House MD users...')
 
     var userId = null;
     var practitionerId = null;
@@ -184,7 +193,7 @@ Meteor.methods({
       });
 
 
-      if(options.asPractitioners){
+      if(has(options, 'asPractitioner')){
         if(typeof Practitioners === "object"){
           if(!Practitioners.findOne({'name.text': user.profile.fullName})){
             practitionerId = Practitioners.insert(newPractitioner);
@@ -192,13 +201,12 @@ Meteor.methods({
           }  
         }
       }
-      if(options.asUser){
+      if(has(options, 'asUser')){
         if(!Meteor.users.findOne({'profile.name.text': user.profile.fullName})){
           userId = Meteor.users.insert(newPractitioner);
           console.info('User created: ' + userId);  
         }
       }
-
     });
 
   },
